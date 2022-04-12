@@ -12,7 +12,8 @@ void sysConfig(void){
 // 				Print Byte to 8-bit LEDs array 
 //--------------------------------------------------------------------
 void print2LEDs(unsigned char ch){
-	LEDsArrPort = ch;
+	int digit = ch-'0'; // acsii to int 
+	LEDsArrPort = digit;
 }    
 //--------------------------------------------------------------------
 //				Clear 8-bit LEDs array 
@@ -51,8 +52,14 @@ void incLEDs(char val){
 //---------------------------------------------------------------------
 //             Shift LEDs Left shown value
 //---------------------------------------------------------------------
-void shiftLEDs(){
-    LEDsArrPort = (LEDsArrPort << 1) | (LEDsArrPort >> (sizeof(LEDsArrPort)*CHAR_BIT - 1));
+void shiftLEDsLeft(){
+    LEDsArrPort = (LEDsArrPort << 1) ;//| (LEDsArrPort >> (sizeof(LEDsArrPort)*CHAR_BIT - 1));
+}
+//---------------------------------------------------------------------
+//             Shift LEDs Right shown value
+//---------------------------------------------------------------------
+void shiftLEDsRight(){
+    LEDsArrPort = (LEDsArrPort >> 1) ;
 }
 //---------------------------------------------------------------------
 //            Polling based Delay function

@@ -19,8 +19,8 @@ extern void enterLPM(unsigned char);
 extern void incLEDs(char);
 extern void enable_interrupts();
 extern void disable_interrupts();
-extern void shiftLEDs();
-
+extern void shiftLEDsLeft();
+extern void shiftLEDsRight();
 extern __interrupt void PBs_handler(void);
 
 #endif
