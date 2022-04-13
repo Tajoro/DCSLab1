@@ -40,13 +40,17 @@ void main(void){
 		for(int i = 0; i < 7; i++){ // shift left 7 times
             delay(LEDs_SHOW_RATE);				// delay of 62.5 [ms]
             shiftLEDsRight();
+
         }
 		enable_interrupts();
 		break;
 		
-	  case state3: // PWM 
-	      disable_interrupts();
-                break;
+	  case state3: // PWM 75% dutycycle
+	    PWMPort ^= 0x80;
+		delay(PWM_ON_RATE);
+        PWMPort ^= 0x80;
+        delay(PWM_OFF_RATE);
+		break;
 
 
 	}

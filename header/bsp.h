@@ -7,6 +7,8 @@
 
 #define   debounceVal      250
 #define   LEDs_SHOW_RATE   0xFFFF  // 62_5ms
+#define   PWM_ON_RATE      0x12  
+#define   PWM_OFF_RATE     0x03  
 
 // LEDs abstraction
 #define LEDsArrPort        P1OUT
@@ -26,10 +28,16 @@
 #define PBsArrIntEdgeSel   P2IES
 #define PBsArrPortSel      P2SEL 
 #define PBsArrPortDir      P2DIR 
-#define PB0                0x10
-#define PB1                0x20
-#define PB2                0x40
-#define PB3                0x80
+#define PB0                0x01
+#define PB1                0x02
+#define PB2                0x04
+#define PB3                0x08
+// PWMs abstraction
+#define PWMPort           P2OUT
+#define PWMPortDir        P2DIR
+#define PWMPortSel        P2SEL
+#define PWM                0x80
+
 
 
 extern void GPIOconfig(void);

@@ -22,6 +22,7 @@ extern void disable_interrupts();
 extern void shiftLEDsLeft();
 extern void shiftLEDsRight();
 extern __interrupt void PBs_handler(void);
+//extern void pwm();
 
 #endif
 
