@@ -16,6 +16,12 @@ void print2LEDs(unsigned char ch){
 	LEDsArrPort = digit;
 }    
 //--------------------------------------------------------------------
+// 				Print Byte to 8-bit LEDs array 
+//--------------------------------------------------------------------
+void printChar2LEDs(unsigned char ch){
+	LEDsArrPort = ch;
+}    
+//--------------------------------------------------------------------
 //				Clear 8-bit LEDs array 
 //--------------------------------------------------------------------
 void clrLEDs(void){
@@ -117,6 +123,10 @@ void disable_interrupts(){
 	else if(PBsArrIntPend & PB2){ 
 	  state = state3;
 	  PBsArrIntPend &= ~PB2;
+        }
+	else if(PBsArrIntPend & PB3){ 
+	  state = state4;
+	  PBsArrIntPend &= ~PB3;
         }
 //---------------------------------------------------------------------
 //            Exit from a given LPM 

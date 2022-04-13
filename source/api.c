@@ -21,6 +21,12 @@ void printArr2LEDs(char Arr[], int size, unsigned int rate){
 		delay(rate);
 	}
 }
+void PrintStr(char str[] , int delay_ms){
+	for (int i=0; i<NAME_LENGTH;i++){
+		printChar2LEDs(str[i]);
+		delay(delay_ms);
+	}
+}
 
 
  

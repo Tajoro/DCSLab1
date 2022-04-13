@@ -5,8 +5,8 @@
 // #include  <msp430xG46x.h>  // MSP430x4xx
 
 
-#define   debounceVal      250
-#define   LEDs_SHOW_RATE   0xFFFF  // 62_5ms
+#define   debounceVal      250  
+#define   LEDs_SHOW_RATE   0xFFFF  // 500 ms
 #define   PWM_ON_RATE      0x12  
 #define   PWM_OFF_RATE     0x03  
 
@@ -22,9 +22,9 @@
 #define SWmask             0x0F
 
 // PushButtons abstraction
-#define PBsArrPort	   P2IN 
+#define PBsArrPort	        P2IN 
 #define PBsArrIntPend	   P2IFG 
-#define PBsArrIntEn	   P2IE
+#define PBsArrIntEn	        P2IE
 #define PBsArrIntEdgeSel   P2IES
 #define PBsArrPortSel      P2SEL 
 #define PBsArrPortDir      P2DIR 

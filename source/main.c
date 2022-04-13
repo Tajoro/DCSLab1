@@ -2,6 +2,7 @@
 #include  "../header/app.h"    		// private library - APP layer
 
 char Id[] = "315602938"; //Kfir's ID
+char name[] = "kfir cohen"; // changing name has to change NAME_LENGTH api.h
 
 enum FSMstate state;
 enum SYSmode lpm_mode;
@@ -52,6 +53,9 @@ void main(void){
         delay(PWM_OFF_RATE);
 		break;
 
+	  case state4: // PWM 75% dutycycle
+	    PrintStr(name,PRINT_CHAR_DELAY);
+		break;
 
 	}
   }
